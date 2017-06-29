@@ -2,47 +2,82 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>FOTOLOG - ..::ÁrÉnItÁ .´´´ ÁmíGáS x CrÉw::..</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/main.css">
+	<title>FOTOLOG - Cute Cats Everyday</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CONTENT">
+	<meta name="author" content="Caterina Da Silva">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 	<header>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 logo">
-					<img src="img/fotolog-logo.png" alt="">
+				<div class="col-xs-6 col-sm-3 logo">
+					<img src="assets/img/fotolog-logo.png" alt="">
 				</div>
 			</div>
 		</div>
 	</header>
 	<section id="bannerflog">
 		<div class="container">
-			<div class="col-md-12 text-center">
-				<h1>..::ÁrÉnItÁ .´´´ ÁmíGáS x CrÉw::..</h1>
+			<div class="col-xs-12 text-center">
+				<h1>Cute Cats Everyday</h1>
+				<small>About <a href="#">cute_cats</a></small>
 			</div>
 		</div>
 	</section>
 	<section id="contenido">
 		<div class="container">
-			<div class="col-md-2 recientes">
-				<a href="" class="fotos">Fotos Recientes</a>
-				<img src="img/jarcor.jpg">
-				<img src="img/foto_0920140822124434.jpg" alt="">
-				<img src="img/i-62869.jpeg" alt="">
-				<img src="img/p3.jpg" alt="">
-			</div>
-			<div class="col-md-8">
-				<img src="img/m1_768_11MS.jpg" alt="">
-				<p>AqUi EStAáá Mi AmIgA ArEnItAáÁÁ</p>
-			</div>
-			<div class="col-md-2 recientes">
-				<a href="" class="fotos">Fotos Recientes</a>
-				<img src="img/jarcor.jpg">
-				<img src="img/foto_0920140822124434.jpg" alt="">
-				<img src="img/i-62869.jpeg" alt="">
-				<img src="img/p3.jpg" alt="">
+			<div class="row">
+				<div class="col-sm-2 hidden-xs recientes text-center">
+					<a href="" class="fotos">Recent photos</a>
+					<div class="image">
+						<img src="assets/img/foto-2.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-3.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-4.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-1.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="arrows">
+						<a href="#" class="pull-left">&laquo; Previous</a>
+						<a href="#" class="pull-right">Next &raquo;</a>
+					</div>
+					<img src="assets/img/foto-1.jpg" alt="">
+					<p class="text-center"><a href="#">27/06/2017</a><br>Cute cat of the day submitted by: <a href="#">Caterina</a></p>
+				</div>
+				<div class="col-sm-2 hidden-xs recientes text-center">
+					<a href="" class="fotos">Friends / Favorites</a>
+					<div class="image">
+						<img src="assets/img/ff-1.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-2.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-3.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-4.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -51,10 +86,14 @@
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
 					<form Name="formulario">
-						<h3>Nombre</h3>
-						<input type="text" id="clave">
-						<h3>Comentario</h3>
-						<textarea id="valor"></textarea>
+						<h3>Name</h3>
+						<input type="text" id="name">
+						<h3>Comment</h3>
+						<textarea id="comment"></textarea>
+						<div class="btn-group pull-right" role="group" aria-label="buttons-inline">
+						<button type="button" class="btn btn-primary" value="Make a Comment" onclick="makeComment()">Comment</button>
+						<button type="button" class="btn btn-default" value="Delete all comments" onclick="deleteComments()">Delete all comments</button>
+					</div>
 					</form>
 				</div>
 			</div>
@@ -63,17 +102,62 @@
 	<section class="container">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6">
-				<div id="ale"></div>
+				<div id="datos"></div>
 			</div>
 		</div>
 	</section>
-	<footer>
-		<div class="row">
+	<section class="hidden-sm hidden-md hidden-lg text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 recientes-xs">
+					<a href="" class="fotos">Recent photos</a>
+					<div class="image">
+						<img src="assets/img/foto-2.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-3.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-4.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/foto-1.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+				</div>
+				<div class="col-xs-6 recientes-xs">
+					<a href="" class="fotos">Friends / Favorites</a>
+					<div class="image">
+						<img src="assets/img/ff-1.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-2.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-3.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+					<div class="image">
+						<img src="assets/img/ff-4.jpg" alt="">
+						<a href="#">27/06/2017</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="container">
+		<div class="row text-center">
 			<div class="col-md-12">
-				<p class="text-center">Laboratoria 2017</p>
+				<p>Laboratoria 2017</p>
+				<small>Developed by Caterina Da Silva</small>
 			</div>
 		</div>
 	</footer>
-	<script src="js/main.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>
